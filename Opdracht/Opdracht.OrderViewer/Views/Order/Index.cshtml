@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Opdracht.Core.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+    var createdAt = @Html.DisplayNameFor(model => model.CreatedAt).ToString();
+}
+
+<h2>Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.ActionLink(createdAt, "Index", new { sortOrder = ViewData["DateSort"] })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filename)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Status
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filename)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<table class="table">
+    <tr>
+        <td>
+            @Html.ActionLink("Run Order Generator", "GenerateOrders", new { }, new { @class = "btn btn-default" })
+        </td>
+        <td>
+            @Html.ActionLink("Stop Order Generator", "StopGeneratingOrders", new { }, new { @class = "btn btn-default" })
+        </td>
+        <td>
+            @Html.ActionLink("Run Order Consumer", "ConsumeOrders", new { }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+</table>
