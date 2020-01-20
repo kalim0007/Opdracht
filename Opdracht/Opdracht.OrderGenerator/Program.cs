@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Opdracht.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Opdracht.OrderGenerator
     {
         static void Main(string[] args)
         {
+            OrderServices.StartOders();
         }
     }
 }

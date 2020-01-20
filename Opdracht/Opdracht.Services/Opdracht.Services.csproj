@@ -51,11 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Opdracht.Core\Opdracht.Core.csproj">
+      <Project>{4BFFE1BB-80E7-4631-AAC9-14481749842F}</Project>
+      <Name>Opdracht.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Opdracht.Sql\Opdracht.Sql.csproj">
+      <Project>{D073F5A6-041B-4D61-A224-70CB3EAB9F04}</Project>
+      <Name>Opdracht.Sql</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
